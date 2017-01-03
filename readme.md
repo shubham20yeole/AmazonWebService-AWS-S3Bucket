@@ -14,7 +14,7 @@ STEPS to SETUP Node.js PROJECT for Amazon web service (AWS) s3 bucket
 
 11. Create views folder to store ejs files
 12. Set ejs in app.js file
-	<code>app.set('view engine', 'ejs');
+	<code>app.set('view engine', 'ejs');<br>
 	app.set('views', path.join(__dirname, 'views'));</code>
 
 13. Use Body Parser Middleware 
