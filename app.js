@@ -24,7 +24,7 @@ var fs = require('fs');
 var S3FS = require('s3fs');
 var awsS3Function = new S3FS('shubhamawss3bucket', {
   accessKeyId:'***************************',
-  secretAccessKey:'***************************';
+  secretAccessKey:'***************************'
 });
 
 awsS3Function.create();
