@@ -1,0 +1,46 @@
+body{ 
+   background-color: #e9e6ea;
+   /*background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/83/Indian_National_Flag.jpg');
+   background-repeat: no-repeat;
+   background-size: 100% 100%;*/
+}
+#awsdiv{
+   width: 60%; 
+   height: 50%;
+   margin-top: 100px; 
+   background-color: white;
+   opacity: 0.9;
+    filter: alpha(opacity=50);
+   text-align: center;
+   padding: 4%;
+}
+input[type="file"]{
+	position: relative;
+   font-family: calibri;
+   width: 350px;
+   padding: 10px;
+   font-size: 1.2em;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border: 1px dashed #BBB; 
+   text-align: center;
+   background-color: #DDD;
+   cursor:pointer;
+}
+input[type="submit"]{
+     background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 6px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+     background-color: #3B2F63;
+    color: white;
+    border: 2px solid #3B2F63;
+}

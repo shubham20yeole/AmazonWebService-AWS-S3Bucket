@@ -14,28 +14,35 @@ STEPS to SETUP Node.js PROJECT for Amazon web service (AWS) s3 bucket
 
 11. Create views folder to store ejs files
 12. Set ejs in app.js file
-	<code>app.set('view engine', 'ejs');<br>
-	app.set('views', path.join(__dirname, 'views'));</code>
+	```nodejs
+  app.set('view engine', 'ejs');<br>
+	app.set('views', path.join(__dirname, 'views'));
+  ```
 
 13. Use Body Parser Middleware 
-	app.use(bodyParser.json({limit: '50mb'})); 
+	```nodejs
+  app.use(bodyParser.json({limit: '50mb'})); 
 	app.use(bodyParser.urlencoded({limit: '50mb',extended: false}));
 	app.use(express.static(path.join(__dirname, 'public')))
 	app.use(express.static(path.join(__dirname)));
+```
 
 14. Initiate and define S3 Bucket
-	var fs = require('fs');
+	```nodejs
+  var fs = require('fs');
 	var S3FS = require('s3fs');
 	var awsS3Function = new S3FS('shubhamawss3bucket', {
 	  accessKeyId:'***************************',
 	  secretAccessKey:'***************************';
 	});
+```
 
 15. Command to create bucket
 	awsS3Function.create();
 
 16. Difine and use multiparty dependency
-	var multiparty = require('connect-multiparty'),
+	```nodejs
+  var multiparty = require('connect-multiparty'),
 	multipartyMiddleware = multiparty();
 	app.use(multipartyMiddleware);
 	    app.use(function(req, res, next){
@@ -45,14 +52,18 @@ STEPS to SETUP Node.js PROJECT for Amazon web service (AWS) s3 bucket
 	          next();
 	        });
 	 });
+```
 
 16. Define root method
-  	app.get('/', function(req, res){       
+  	```nodejs
+    app.get('/', function(req, res){       
 	   res.render("index.ejs");
 	});
+```
 
 17. Create upload method
-	app.post('/upload', function(req, res){       
+	```nodejs
+  app.post('/upload', function(req, res){       
 	    var file = req.files.file;
 	    var filepath = file.path;
 	    var timestamp = new Date().valueOf();
@@ -66,3 +77,4 @@ STEPS to SETUP Node.js PROJECT for Amazon web service (AWS) s3 bucket
 	          "<img src='"+url+"'>");
 		  })
 		});
+```

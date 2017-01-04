@@ -23,8 +23,8 @@ app.use(express.static(path.join(__dirname)));
 var fs = require('fs');
 var S3FS = require('s3fs');
 var awsS3Function = new S3FS('shubhamawss3bucket', {
-  accessKeyId:'***************************',
-  secretAccessKey:'***************************'
+  accessKeyId:'********************************************',
+  secretAccessKey:'****************************************'
 });
 
 awsS3Function.create();
@@ -36,7 +36,7 @@ app.use(multipartyMiddleware);
       console.log( req.path + "token:" + req.query.access_token)
       fs.appendFile('logs.txt', req.path + "token:" + req.query.access_token+'', 
         function(err){
-          next();
+          next(); 
         });
   });
 
@@ -47,9 +47,11 @@ app.get('/', function(req, res){
 app.post('/upload', function(req, res){       
     var file = req.files.file;
     var filepath = file.path;
-    var timestamp = new Date().valueOf();
-    var stream = fs.createReadStream(filepath);
-    var url = "https://s3.amazonaws.com/shubhamawss3bucket/shubham-"+timestamp+"-"+file.originalFilename;
+  var timestamp = new Date().valueOf();
+
+
+  var stream = fs.createReadStream(filepath);
+  var url = "https://s3.amazonaws.com/shubhamawss3bucket/shubham-"+timestamp+"-"+file.originalFilename;
     return awsS3Function.writeFile('shubham-'+timestamp+"-"+file.originalFilename, stream).then(function(){
       console.log("FILE UPLOADED SUCCESSFULLY");
         res.send("<h1>FILE UPLOADED SUCCESSFULLY:</h1>"+
