@@ -11,12 +11,12 @@
 9. npm install s3fs --save
 10. npm install connect-multiparty --save
 11. Create views folder to store ejs files
+
 12. Set ejs in app.js file
-	>>
-	```nodejs
-	app.set('view engine', 'ejs');<br>
-	app.set('views', path.join(__dirname, 'views'));
-	```
+>>```nodejs
+app.set('view engine', 'ejs');<br>
+app.set('views', path.join(__dirname, 'views'));
+```
 13. Use Body Parser Middleware 
 >>
 ```nodejs
