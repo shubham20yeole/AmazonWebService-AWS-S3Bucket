@@ -12,13 +12,13 @@
 10. npm install connect-multiparty --save
 11. Create views folder to store ejs files
 
-12. Set ejs in app.js file
+12 Set ejs in app.js file
 >>```nodejs
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 ```
 
-13. Use Body Parser Middleware 
+13 Use Body Parser Middleware 
 >>```nodejs
 app.use(bodyParser.json({limit: '50mb'})); 
 app.use(bodyParser.urlencoded({limit: '50mb',extended: false}));
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.static(path.join(__dirname)));
 ```
 
-14. Initiate and define S3 Bucket
+14 Initiate and define S3 Bucket
 >>```nodejs
   var fs = require('fs');
 	var S3FS = require('s3fs');
