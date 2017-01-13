@@ -63,7 +63,7 @@ awsS3Function.create();
 	});
 ```
 
-18. Create upload method
+18 Create upload method
 >>
 ```nodejs
   app.post('/upload', function(req, res){       
