@@ -1,16 +1,16 @@
 **STEPS to SETUP Node.js PROJECT for Amazon web service (AWS) s3 bucket**
 
-1. npm init
-2. npm install express --save
-3. npm install body-parser --save
-4. npm install path --save
-5. npm install ejs --save
-6. npm install passport --save
-7. npm install git+https://github.com/RiptideElements/s3fs
-8. npm install fs --save
-9. npm install s3fs --save
-10. npm install connect-multiparty --save
-11. Create views folder to store ejs files
+1 npm init
+2 npm install express --save
+3 npm install body-parser --save
+4 npm install path --save
+5 npm install ejs --save
+6 npm install passport --save
+7 npm install git+https://github.com/RiptideElements/s3fs
+8 npm install fs --save
+9 npm install s3fs --save
+10 npm install connect-multiparty --save
+11 Create views folder to store ejs files
 
 12 Set ejs in app.js file
 >>```nodejs
@@ -36,10 +36,12 @@ app.use(express.static(path.join(__dirname)));
 	});
 ```
 
-15. Command to create bucket
-	awsS3Function.create();
+15 Command to create bucket
+>>```nodejs
+awsS3Function.create();
+```
 
-16. Difine and use multiparty dependency
+16 Difine and use multiparty dependency
 >>```nodejs
   var multiparty = require('connect-multiparty'),
 	multipartyMiddleware = multiparty();
@@ -53,7 +55,7 @@ app.use(express.static(path.join(__dirname)));
 	 });
 ```
 
-16. Define root method
+17 Define root method
 >>
 ```nodejs
     app.get('/', function(req, res){       
@@ -61,7 +63,7 @@ app.use(express.static(path.join(__dirname)));
 	});
 ```
 
-17. Create upload method
+18. Create upload method
 >>
 ```nodejs
   app.post('/upload', function(req, res){       
