@@ -10,23 +10,20 @@
 8. npm install fs --save
 9. npm install s3fs --save
 10. npm install connect-multiparty --save
-
-
 11. Create views folder to store ejs files
 12. Set ejs in app.js file
 >>
 ```nodejs
-  app.set('view engine', 'ejs');<br>
-	app.set('views', path.join(__dirname, 'views'));
-  ```
-
+app.set('view engine', 'ejs');<br>
+app.set('views', path.join(__dirname, 'views'));
+```
 13. Use Body Parser Middleware 
 >>
 ```nodejs
-  app.use(bodyParser.json({limit: '50mb'})); 
-	app.use(bodyParser.urlencoded({limit: '50mb',extended: false}));
-	app.use(express.static(path.join(__dirname, 'public')))
-	app.use(express.static(path.join(__dirname)));
+app.use(bodyParser.json({limit: '50mb'})); 
+app.use(bodyParser.urlencoded({limit: '50mb',extended: false}));
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname)));
 ```
 
 14. Initiate and define S3 Bucket
